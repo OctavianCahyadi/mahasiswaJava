@@ -1,7 +1,5 @@
 package id.pantirapih.com.Controller;
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,12 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import id.pantirapih.com.Exception.MahasiswaException;
 import id.pantirapih.com.Model.Mahasiswa;
 import id.pantirapih.com.Service.IMahasiswaService;
 import id.pantirapih.com.Service.StatusCode;
-
 
 @RestController
 @RequestMapping("/Mahasiswa")

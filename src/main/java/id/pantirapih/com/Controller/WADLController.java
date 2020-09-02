@@ -127,7 +127,6 @@ public class WADLController {
                 if ( ! wadlRequest.getParam().isEmpty() ) {
                     wadlMethod.setRequest(wadlRequest);
                 }
-                  
                 // Response
                 if ( !mediaTypes.isEmpty() ) {
                     Response wadlResponse = new Response();
@@ -139,7 +138,6 @@ public class WADLController {
                         HttpStatus httpcode = status.value();
                         wadlResponse.getStatus().add((long)httpcode.value());
                     }
- 
                     for (MediaType mediaType : mediaTypes) {
                         Representation wadlRepresentation = new Representation();
                         wadlRepresentation.setMediaType(mediaType.toString());
@@ -147,13 +145,8 @@ public class WADLController {
                     }
                     wadlMethod.getResponse().add(wadlResponse);
                 }
-                  
                 wadlResource.getMethodOrResource().add(wadlMethod);
-                  
             }
-              
-     
-              
         }
         result.getResources().add(wadResources);
           
