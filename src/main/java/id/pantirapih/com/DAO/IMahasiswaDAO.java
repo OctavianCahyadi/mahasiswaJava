@@ -12,4 +12,6 @@ public interface IMahasiswaDAO {
 
 	void deleteMahasiswa(Long long1);
 
+	Mahasiswa getMahasiswaByNama(String nama);
+
 }

@@ -12,4 +12,6 @@ public interface IMahasiswaService {
 
 	void deleteMahasiswa(Mahasiswa m);
 
+	Mahasiswa getMahasiswaByNama(String nama);
+
 }

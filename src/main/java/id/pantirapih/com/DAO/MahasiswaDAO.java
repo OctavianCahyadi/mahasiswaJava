@@ -37,6 +37,13 @@ public class MahasiswaDAO implements IMahasiswaDAO{
 		entityManager.merge(mTamp);	
 		
 	}
+
+	@Override
+	public Mahasiswa getMahasiswaByNama(String nama) {
+		entityManager.getEntityManagerFactory().getCache().evictAll();
+		String hql = "SELECT new Mahasiswa(idmhs, namaMhs, nim, jurusan, tanggalLahir) FROM Mahasiswa mhs WHERE mhs.namaMhs='" + nama + "'";
+		return (Mahasiswa) entityManager.createQuery(hql).getSingleResult();
+	}
 	
 	
 	

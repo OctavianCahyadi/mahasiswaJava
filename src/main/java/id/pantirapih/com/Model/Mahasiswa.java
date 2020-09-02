@@ -28,13 +28,6 @@ public class Mahasiswa {
 	private Integer deleted;
 	
 	
-	public Integer getDeleted() {
-		return deleted;
-	}
-
-	public void setDeleted(Integer deleted) {
-		this.deleted = deleted;
-	}
 
 	public Mahasiswa() {
 		super();
@@ -48,6 +41,14 @@ public class Mahasiswa {
 		this.jurusan = jurusan;
 		this.tanggalLahir = tanggalLahir;
 	}
+	// public Mahasiswa(Long idmhs, String namaMhs, String nim, String jurusan, String tanggalLahir) {
+	// 	super();
+	// 	this.idmhs = idmhs;
+	// 	this.namaMhs = namaMhs;
+	// 	this.nim = nim;
+	// 	this.jurusan = jurusan;
+	// 	this.tanggalLahir = tanggalLahir;	
+	// }
 	public Long getIdmhs() {
 		return idmhs;
 	}
@@ -77,6 +78,13 @@ public class Mahasiswa {
 	}
 	public void setTanggalLahir(String tanggalLahir) {
 		this.tanggalLahir = tanggalLahir;
+	}
+	public Integer getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(Integer deleted) {
+		this.deleted = deleted;
 	}
 	
 	

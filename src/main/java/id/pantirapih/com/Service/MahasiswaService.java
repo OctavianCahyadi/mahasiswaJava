@@ -49,4 +49,20 @@ public class MahasiswaService implements IMahasiswaService{
 		
 	}
 
+	@Override
+	public Mahasiswa getMahasiswaByNama(String nama) {
+		Mahasiswa tamp = null;
+		try {
+			tamp = iMhsDAO.getMahasiswaByNama(nama);
+		} catch (Exception e) {
+			throw new MahasiswaException(e.getMessage(), "Data Tidak Ditemukan", StatusCode.QUERYSELECT.getCode());
+		}
+
+		if (tamp == null) {
+			throw new MahasiswaException("", "Data Tidak Ditemukan", StatusCode.DATANOTFOUND.getCode());
+		}
+
+		return tamp;
+	}
+
 }
