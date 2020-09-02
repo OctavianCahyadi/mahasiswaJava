@@ -16,7 +16,7 @@ public class MahasiswaDAO implements IMahasiswaDAO{
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public void tambahMahasiswa(Mahasiswa m) {
+	public void tambahMahasiswa(final Mahasiswa m) {
 		entityManager.getEntityManagerFactory().getCache().evictAll();
 		m.setDeleted(0);
 		entityManager.merge(m);				
@@ -25,23 +25,23 @@ public class MahasiswaDAO implements IMahasiswaDAO{
 	@Override
 	public List<Mahasiswa> getAllMahasiswa() {
 		entityManager.getEntityManagerFactory().getCache().evictAll();
-		String hql = "FROM Mahasiswa WHERE deleted = 0";
+		final String hql = "FROM Mahasiswa WHERE deleted = 0";
 		return (List<Mahasiswa>) entityManager.createQuery(hql).getResultList();
 	}
 
 	@Override
-	public void deleteMahasiswa(Long m) {
+	public void deleteMahasiswa(final Long m) {
 		entityManager.getEntityManagerFactory().getCache().evictAll();
-		Mahasiswa mTamp = entityManager.find(Mahasiswa.class, m);
+		final Mahasiswa mTamp = entityManager.find(Mahasiswa.class, m);
 		mTamp.setDeleted(1);
 		entityManager.merge(mTamp);	
 		
 	}
 
 	@Override
-	public Mahasiswa getMahasiswaByNama(String nama) {
+	public Mahasiswa getMahasiswaByNama(final String nama) {
 		entityManager.getEntityManagerFactory().getCache().evictAll();
-		String hql = "SELECT new Mahasiswa(idmhs, namaMhs, nim, jurusan, tanggalLahir) FROM Mahasiswa mhs WHERE mhs.namaMhs='" + nama + "'";
+		final String hql = "SELECT new Mahasiswa(idmhs, namaMhs, nim, jurusan, tanggalLahir) FROM Mahasiswa mhs WHERE mhs.namaMhs='" + nama + "' AND mhs.deleted=0";
 		return (Mahasiswa) entityManager.createQuery(hql).getSingleResult();
 	}
 	

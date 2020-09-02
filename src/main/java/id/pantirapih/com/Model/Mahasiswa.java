@@ -27,7 +27,6 @@ public class Mahasiswa {
 	@Column (name = "deleted")
 	private Integer deleted;
 	
-	
 
 	public Mahasiswa() {
 		super();
@@ -41,14 +40,7 @@ public class Mahasiswa {
 		this.jurusan = jurusan;
 		this.tanggalLahir = tanggalLahir;
 	}
-	// public Mahasiswa(Long idmhs, String namaMhs, String nim, String jurusan, String tanggalLahir) {
-	// 	super();
-	// 	this.idmhs = idmhs;
-	// 	this.namaMhs = namaMhs;
-	// 	this.nim = nim;
-	// 	this.jurusan = jurusan;
-	// 	this.tanggalLahir = tanggalLahir;	
-	// }
+	
 	public Long getIdmhs() {
 		return idmhs;
 	}
